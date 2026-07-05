@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="750.0" prefWidth="1200.0"
+            styleClass="root-crud"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.cando_crud_bd.controller.PeliculaController">
+
+    <children>
+
+        <Label layoutX="420.0" layoutY="25.0" text="🎞 CRUD DE PELÍCULAS" styleClass="titulo"/>
+
+        <VBox layoutX="35.0" layoutY="90.0" prefHeight="610.0" prefWidth="330.0"
+              spacing="12.0" styleClass="card-form">
+
+            <padding>
+                <Insets top="25" right="25" bottom="25" left="25"/>
+            </padding>
+
+            <children>
+                <Label text="Formulario" styleClass="subtitulo"/>
+
+                <Label text="ID"/>
+                <TextField fx:id="txtId" disable="true"/>
+
+                <Label text="Título"/>
+                <TextField fx:id="txtTitulo" promptText="Ej: Interestelar"/>
+
+                <Label text="Género"/>
+                <ComboBox fx:id="cmbGenero" prefWidth="280"/>
+
+                <Label text="Director"/>
+                <TextField fx:id="txtDirector" promptText="Ej: Christopher Nolan"/>
+
+                <Label text="Duración"/>
+                <TextField fx:id="txtDuracion" promptText="Minutos"/>
+
+                <Label text="Fecha de estreno"/>
+                <DatePicker fx:id="dpEstreno" prefWidth="280"/>
+
+                <CheckBox fx:id="chkDisponible" text="Disponible"/>
+
+                <Button text="Registrar" onAction="#registrar" styleClass="btn-principal"/>
+                <Button text="Actualizar" onAction="#actualizar" styleClass="btn-actualizar"/>
+                <Button text="Eliminar" onAction="#eliminar" styleClass="btn-eliminar"/>
+                <Button text="Limpiar" onAction="#limpiar" styleClass="btn-limpiar"/>
+            </children>
+        </VBox>
+
+        <AnchorPane layoutX="395.0" layoutY="90.0" prefHeight="610.0" prefWidth="765.0"
+                    styleClass="card-table">
+
+            <children>
+                <Label layoutX="25.0" layoutY="20.0" text="Listado de películas" styleClass="subtitulo"/>
+
+                <TableView fx:id="tablaPeliculas" layoutX="25.0" layoutY="65.0"
+                           prefHeight="515.0" prefWidth="715.0">
+
+                    <columns>
+                        <TableColumn fx:id="colId" text="ID" prefWidth="50.0"/>
+                        <TableColumn fx:id="colTitulo" text="Título" prefWidth="140.0"/>
+                        <TableColumn fx:id="colGenero" text="Género" prefWidth="110.0"/>
+                        <TableColumn fx:id="colDirector" text="Director" prefWidth="150.0"/>
+                        <TableColumn fx:id="colDuracion" text="Duración" prefWidth="90.0"/>
+                        <TableColumn fx:id="colEstreno" text="Estreno" prefWidth="105.0"/>
+                        <TableColumn fx:id="colDisponible" text="Disponible" prefWidth="70.0"/>
+                    </columns>
+
+                </TableView>
+            </children>
+        </AnchorPane>
+
+    </children>
+</AnchorPane>

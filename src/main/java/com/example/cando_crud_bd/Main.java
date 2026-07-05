@@ -1,0 +1,30 @@
+package com.example.cando_crud_bd;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+public class Main extends Application {
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        FXMLLoader loader = new FXMLLoader(
+                Main.class.getResource("/com/example/cando_crud_bd/login.fxml")
+        );
+
+        Scene scene = new Scene(loader.load(), 500, 650);
+        scene.getStylesheets().add(
+                Main.class.getResource("/com/example/cando_crud_bd/style.css").toExternalForm()
+        );
+
+        stage.setTitle("Login - CRUD Películas");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch();
+    }
+}
